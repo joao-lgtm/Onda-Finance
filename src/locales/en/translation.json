@@ -1,0 +1,5 @@
+{
+  "helloUser": "Hello, {{name}}!",
+  "assets": "Your assets",
+  "welcomeBack": "Welcome back 👋"
+}

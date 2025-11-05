@@ -1,0 +1,5 @@
+{
+  "helloUser": "Olá, {{name}}!",
+  "assets": "Seus ativos",
+  "welcomeBack": "Bem-vindo de volta 👋"  
+}
