@@ -5,7 +5,7 @@ import { Container, Square } from "./style";
 interface ButtonProps {
   label: string;
   icon: React.ReactNode;
-  onPress?: () => void; // ✅ função opcional para clique
+  onPress?: () => void; 
 }
 
 export default function Button({ label, icon, onPress }: ButtonProps) {

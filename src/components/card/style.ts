@@ -32,7 +32,7 @@ export const Balance = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(185, 0, 0, 0.15);
   border-radius: 15px;
   padding: 30px;
 

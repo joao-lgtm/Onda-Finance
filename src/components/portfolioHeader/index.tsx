@@ -1,7 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { Container, SubText, TotalText, VariationText } from "./style";
 
-export function PortfolioHeader({ totalBRL, totalUSD, variation }: any) {
+type PortfolioHeaderProps = {
+  totalBRL: number;
+  totalUSD: number;
+  variation: number;
+};
+
+export function PortfolioHeader({ totalBRL, totalUSD, variation }: PortfolioHeaderProps) {
   const { t } = useTranslation();
 
   return (

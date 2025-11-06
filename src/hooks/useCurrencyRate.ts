@@ -5,20 +5,23 @@ type CurrencyConverterProps = {
 };
 
 export function useCurrencyConverter({ initialUsd = 0 }: CurrencyConverterProps) {
-  const [rate, setRate] = useState<number>(5.42); // 💰 valor fixo mockado
+  const [rate, setRate] = useState<number>(5.42)
   const [loading, setLoading] = useState(false);
   const [usdValue, setUsdValue] = useState<number>(initialUsd);
   const [brlValue, setBrlValue] = useState<number>(initialUsd * 5.42);
-
-  // 🔁 Simula atualização da taxa (muda levemente)
+  
   const refreshRate = useCallback(() => {
     setLoading(true);
     setTimeout(() => {
-      const simulated = 5.3 + Math.random() * 0.3; // 5.3–5.6
+      const simulated = 5.3 + Math.random() * 0.3;
       setRate(parseFloat(simulated.toFixed(2)));
       setLoading(false);
     }, 800);
   }, []);
+
+  useEffect(() => {
+    setUsdValue(initialUsd);
+  }, [initialUsd]);
 
   useEffect(() => {
     setBrlValue(parseFloat((usdValue * rate).toFixed(2)));

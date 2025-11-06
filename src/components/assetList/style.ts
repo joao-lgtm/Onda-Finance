@@ -1,26 +1,58 @@
+import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
+
+export const Container = styled.View`
+  flex: 1;
+  background-color: ${({ theme }) => theme.colors.background};
+`;
+
+export const Header = styled.View`
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  background-color: ${({ theme }) => theme.colors.card};
+  border-bottom-width: 1px;
+  border-color: ${({ theme }) => theme.colors.border};
+  elevation: 2;
+`;
+
+export const BackButton = styled(TouchableOpacity)`
+  padding: 6px;
+  margin-right: 12px;
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.background};
+`;
+
+export const HeaderTitle = styled.Text`
+  font-size: 20px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.text};
+`;
 
 export const AssetRow = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  padding: 12px 16px;
+  padding: 14px 16px;
   border-bottom-width: 0.5px;
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: ${({ theme }) => theme.colors.border};
+  background-color: ${({ theme }) => theme.colors.card};
+  margin-bottom: 4px;
+  border-radius: 8px;
 `;
 
 export const Symbol = styled.Text`
   font-weight: bold;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export const Name = styled.Text`
   flex: 1;
-  color: rgba(255, 255, 255, 0.7);
-  margin-left: 6px;
+  color: ${({ theme }) => theme.colors.text_secondary};
+  margin-left: 8px;
 `;
 
 export const Price = styled.Text`
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export const Change = styled.Text<{ change: number }>`
@@ -30,7 +62,7 @@ export const Change = styled.Text<{ change: number }>`
 `;
 
 export const Allocation = styled.Text`
-  width: 40px;
+  width: 50px;
   text-align: right;
-  color: rgba(255, 255, 255, 0.7);
+  color: ${({ theme }) => theme.colors.text_secondary};
 `;

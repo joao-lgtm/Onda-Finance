@@ -4,6 +4,7 @@ import Fontisto from "@expo/vector-icons/Fontisto";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Pressable, View } from "react-native";
+
 import {
   Balance,
   Change,
@@ -24,7 +25,7 @@ type CardProps = {
   rateLoading: boolean;
   topGainer: { name: string; change24h: number } | null;
   topLoser: { name: string; change24h: number } | null;
-  rate: number
+  rate: number;
 };
 
 export default function Card({
@@ -56,7 +57,6 @@ export default function Card({
 
   return (
     <Container>
-      {/* Header */}
       <HeaderRow>
         <FontAwesome6 name="user-large" size={26} color="white" />
         <Pressable onPress={toggleLanguage}>
@@ -65,7 +65,6 @@ export default function Card({
           </LangButton>
         </Pressable>
       </HeaderRow>
-
 
       <Info>
         <Change>
@@ -92,7 +91,7 @@ export default function Card({
           </UserText>
 
           {rateLoading ? (
-            <UserText>Carregando...</UserText>
+            <UserText>{t("loading")}</UserText>
           ) : (
             <>
               <View
@@ -110,14 +109,14 @@ export default function Card({
                   {hidden
                     ? "••••••"
                     : new Intl.NumberFormat(
-                      currency === "BRL" ? "pt-BR" : "en-US",
-                      { style: "currency", currency }
-                    ).format(Number(displayValue))}
+                        currency === "BRL" ? "pt-BR" : "en-US",
+                        { style: "currency", currency }
+                      ).format(Number(displayValue))}
                 </CurrencyValue>
               </View>
 
               <UserText style={{ fontSize: 13, opacity: 0.7, marginTop: 4 }}>
-                ({currency === "BRL" ? "Real brasileiro" : "US Dollar"} •{" "}
+                ({currency === "BRL" ? t("brazilianReal") : t("usd")} •{" "}
                 {rate ? `1 USD = R$ ${rate.toFixed(2)}` : "–"})
               </UserText>
             </>
@@ -125,10 +124,9 @@ export default function Card({
         </CurrencyRow>
 
         <View style={{ flexDirection: "row", gap: 15 }}>
-          {/* Toggle Hidden */}
           <Pressable
             onPress={toggleHidden}
-            accessibilityLabel={hidden ? "Mostrar saldo" : "Ocultar saldo"}
+            accessibilityLabel={hidden ? t("showBalance") : t("hideBalance")}
             style={{
               marginLeft: 6,
               padding: 6,
@@ -143,8 +141,6 @@ export default function Card({
               color="white"
             />
           </Pressable>
-
-          {/* Toggle Currency */}
           <Pressable
             onPress={toggleCurrency}
             style={{
