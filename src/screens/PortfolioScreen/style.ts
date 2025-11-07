@@ -1,4 +1,4 @@
-// style.ts
+
 import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 

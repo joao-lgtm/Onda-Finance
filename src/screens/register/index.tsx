@@ -18,7 +18,7 @@ import {
 export default function RegisterScreen() {
     const { t } = useTranslation();
     const { users } = useUser();
-    const navigation = useNavigation<any>(); // <- hook usado para navegação
+    const navigation = useNavigation<any>();
 
     const [username, setUsername] = useState("");
     const [name, setName] = useState("");

@@ -13,7 +13,6 @@ import {
   Symbol
 } from "./style";
 
-// Use RootStackParamList completo
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 type Props = {

@@ -1,5 +1,3 @@
-// useUser.tsx ou UserProvider.tsx
-
 import { findUserByUsername } from "@/data/mockDb";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { createContext, useCallback, useContext, useEffect, useState } from "react";

@@ -1,14 +1,13 @@
-// src/styles/globalStyles.ts
 import styled from "styled-components/native";
 
-// Container geral da tela
+
 export const Container = styled.KeyboardAvoidingView`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
   padding: 16px;
 `;
 
-// Cabeçalho
+
 export const HeaderContainer = styled.View`
   margin-bottom: 24px;
 `;
@@ -19,7 +18,6 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-// Inputs
 export const InputContainer = styled.View`
   margin-bottom: 16px;
 `;
@@ -34,7 +32,7 @@ export const Input = styled.TextInput`
   margin-bottom: 12px;
 `;
 
-// Botões
+
 export const Button = styled.TouchableOpacity<{ disabled?: boolean }>`
   background-color: ${({ theme, disabled }) =>
     disabled ? theme.colors.gray_800 : theme.colors.primary};
@@ -51,14 +49,13 @@ export const ButtonText = styled.Text`
   font-weight: 600;
 `;
 
-// Mensagens de erro
+
 export const ErrorText = styled.Text`
   color: ${({ theme }) => theme.colors.error};
   font-size: 14px;
   margin-bottom: 8px;
 `;
 
-// Quick login / textos adicionais
 export const InfoText = styled.Text`
   color: ${({ theme }) => theme.colors.text_secondary};
   font-size: 14px;

@@ -14,7 +14,6 @@ const STORAGE_KEY = "@app:transactions";
 
 let transactions: Transaction[] = [];
 
-// 🔹 Garante que sempre que for chamado, os dados estejam atualizados
 async function ensureTransactionsLoaded() {
   if (transactions.length === 0) {
     const data = await AsyncStorage.getItem(STORAGE_KEY);
@@ -43,7 +42,7 @@ export async function addTransaction(tx: Transaction) {
 }
 
 export async function getUserTransactions(username: string) {
-  await ensureTransactionsLoaded(); // ✅ sempre carrega antes
+  await ensureTransactionsLoaded();
   return transactions.filter(
     (tx) => tx.from === username || tx.to === username
   );
