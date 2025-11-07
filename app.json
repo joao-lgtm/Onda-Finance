@@ -55,8 +55,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "eee56696-3c37-4e82-99d7-619cc9f39e73"
+        "projectId": "b07b9ffb-b387-48db-be91-4c529f5f710a"
       }
-    }
+    },
+    "owner": "joao.cassatti"
   }
 }
